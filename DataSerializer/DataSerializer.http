@@ -1,0 +1,6 @@
+@DataSerializer_HostAddress = http://localhost:5015
+
+GET {{DataSerializer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
