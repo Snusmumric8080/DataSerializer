@@ -1,0 +1,1 @@
+CREATE INDEX idx_outer_id ON ContentData (OuterId);

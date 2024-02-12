@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
     <UserSecretsId>58ac32c2-214e-4edf-93e0-c3a04a45815e</UserSecretsId>
@@ -10,11 +10,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="SQL\Tables\DocumentContent\**" />
+    <Compile Remove="SQL\Tables\DocumentOuterInfo\**" />
+    <Compile Remove="SQL\Tables\Document\**" />
+    <Content Remove="SQL\Tables\DocumentContent\**" />
+    <Content Remove="SQL\Tables\DocumentOuterInfo\**" />
+    <Content Remove="SQL\Tables\Document\**" />
+    <EmbeddedResource Remove="SQL\Tables\DocumentContent\**" />
+    <EmbeddedResource Remove="SQL\Tables\DocumentOuterInfo\**" />
+    <EmbeddedResource Remove="SQL\Tables\Document\**" />
+    <None Remove="SQL\Tables\DocumentContent\**" />
+    <None Remove="SQL\Tables\DocumentOuterInfo\**" />
+    <None Remove="SQL\Tables\Document\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Dapper" Version="2.1.28" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Npgsql" Version="8.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
@@ -22,9 +39,7 @@
 
   <ItemGroup>
     <Folder Include="SQL\StoredProcedure\" />
-    <Folder Include="SQL\Tables\DocumentContent\" />
-    <Folder Include="SQL\Tables\DocumentOuterInfo\" />
-    <Folder Include="SQL\Tables\Document\" />
+    <Folder Include="SQL\Tables\" />
   </ItemGroup>
 
 </Project>

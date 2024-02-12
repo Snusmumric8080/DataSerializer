@@ -1,11 +1,12 @@
 ﻿
 namespace DataSerializer.Models.DtoModels
 {
-    public class DocumentReadDtoModel : IDocumentReadDtoModel
+    public class ContentDataReadDtoModel : IContentDataReadDtoModel
     {
         public int OuterId { get; set; }
         public Guid Guid { get; set; }
         public DateTime Created { get; set; }
         public string Content { get; set; }
+        public int OuterUserId { get; set; }
     }
 }

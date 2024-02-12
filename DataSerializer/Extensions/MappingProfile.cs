@@ -8,13 +8,14 @@ namespace DataSerializer.Extensions
     {
         public MappingProfile()
         {
-            CreateMap<Document, DocumentReadDtoModel>();
-            CreateMap<DocumentUpdateDtoModel, Document>();
-            CreateMap<DocumentCreateDtoModel, Document>()
-                .AfterMap((dto, entity) =>
-                {
-                    entity.Guid = Guid.NewGuid();
-                });
+            CreateMap<ContentData, ContentDataReadDtoModel>();
+            CreateMap<ContentDataUpdateDtoModel, ContentData>();
+            CreateMap<ContentDataCreateDtoModel, ContentData>()
+               .AfterMap((dto, entity) =>
+               {
+                   entity.Guid = Guid.NewGuid();
+               });
+            CreateMap<ContentDataCreateDtoModel, IContentData>().As<ContentData>();
         }
     }
 }

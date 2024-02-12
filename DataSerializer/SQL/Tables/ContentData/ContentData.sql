@@ -1,0 +1,8 @@
+CREATE TABLE ContentData (
+    Id SERIAL PRIMARY KEY,
+    OuterId INT NOT NULL,
+    OuterUserId INT NOT NULL,
+	"Created" TIMESTAMP NOT NULL,
+	"Content" TEXT NOT NULL,
+	Guid UUID NOT NULL
+);

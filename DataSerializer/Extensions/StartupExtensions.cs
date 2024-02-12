@@ -11,13 +11,11 @@ namespace DataSerializer.Extensions
     {
         public static void AddScopedServices(this IServiceCollection services)
         {
-            services.AddScoped<IDocumentRepository, DocumentRepository>();
-            services.AddScoped<IDocumentService, DocumentService>();
-            services.AddScoped<IDocumentCreateDtoModel, DocumentCreateDtoModel>();
-            services.AddScoped<IDocumentUpdateDtoModel, DocumentUpdateDtoModel>();
-            services.AddScoped<IDocumentReadDtoModel, DocumentReadDtoModel>();
-            services.AddScoped<IDocument, Document>();
-            services.AddAutoMapper(typeof(Program));         
+            services.AddScoped<IContentDataService, Service.ContentData>();
+            services.AddScoped<IContentDataCreateDtoModel, ContentDataCreateDtoModel>();
+            services.AddScoped<IContentDataUpdateDtoModel, ContentDataUpdateDtoModel>();
+            services.AddScoped<IContentDataReadDtoModel, ContentDataReadDtoModel>();
+            services.AddScoped<IContentData, Models.ContentData>();        
         }
     }
 }

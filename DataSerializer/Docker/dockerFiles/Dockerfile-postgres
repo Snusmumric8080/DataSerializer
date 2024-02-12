@@ -1,9 +1,9 @@
 FROM postgres
 ENV POSTGRES_USER=Snusmumric
 ENV POSTGRES_PASSWORD=admin
-RUN mkdir -p /D/AppsInfo/DataSerializer/PostgreContainer
-RUN chown -R postgres:postgres /D/AppsInfo/DataSerializer/PostgreContainer
-ENV PGDATA /D/AppsInfo/DataSerializer/PostgreContainer
+RUN mkdir -p /S/AppsInfo/DataSerializer/PostgreContainer
+RUN chown -R postgres:postgres /S/AppsInfo/DataSerializer/PostgreContainer
+ENV PGDATA /S/AppsInfo/DataSerializer/PostgreContainer
 ENV TZ=Europe/Moscow
 EXPOSE 5432
 CMD ["postgres"]

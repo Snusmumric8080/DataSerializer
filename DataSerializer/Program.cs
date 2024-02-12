@@ -1,6 +1,7 @@
 
 using DataSerializer.Extensions;
 using DataSerializer.Repositories;
+using Microsoft.AspNetCore.Hosting;
 
 namespace DataSerializer
 {
@@ -11,14 +12,14 @@ namespace DataSerializer
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddAutoMapper(typeof(Program).Assembly);
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddScopedServices();
-            builder.Services.AddScoped<IDocumentRepository>(provider => new DocumentRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddScoped<IContentDataRepository>(provider => new ContentDataRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
